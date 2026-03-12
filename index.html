@@ -29,18 +29,54 @@
     .video-grid div{background:#222; border-radius:12px; overflow:hidden; cursor:pointer; transition:0.3s;}
     .video-grid div:hover{transform:scale(1.05); box-shadow:0 0 20px rgba(255,140,0,0.4);}
     .video-grid iframe{width:100%; height:200px; display:block; border:none;}
-
     .video-container{max-width:800px; margin:auto; overflow:hidden;}
 
     /* Team Section */
-    .team-grid{display:flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;}
-    .team-member{flex: 1 1 200px; max-width: 220px; text-align: center; margin-bottom: 20px; background:#222; border-radius:12px; padding:15px; transition:0.3s;}
-    .team-member img{width:100px; height:100px; border-radius:50%; margin-bottom:10px; border:3px solid #ff8c00; cursor:pointer; transition: transform 0.3s ease; object-fit: cover;}
-    .team-member img:hover{transform: scale(1.05);}
-    .team-member h3{margin:5px 0; color: yellow;}
-    .team-member p{color:#ccc; font-size:0.95rem; line-height:1.5;}
-    .team-member p strong{color:#ffb347; font-weight:1000; font-size:1rem;}
-    .full-info{display:none; margin-top:10px; text-align:center; font-size:16px; font-family:'Poppins',sans-serif; color:#eee; line-height:1.6;}
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:30px;
+      max-width:1100px;
+      margin:auto;
+      margin-top:30px;
+    }
+    .team-member{
+      background:linear-gradient(145deg,#1b1b1b,#262626);
+      border-radius:16px;
+      padding:25px 20px;
+      text-align:center;
+      transition:0.35s;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+    .team-member:hover{
+      transform:translateY(-8px);
+      box-shadow:0 15px 35px rgba(255,140,0,0.3);
+    }
+    .team-member img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      border:4px solid #ff8c00;
+      object-fit:cover;
+      margin-bottom:12px;
+      cursor:pointer;
+      transition:0.35s;
+    }
+    .team-member img:hover{transform:scale(1.08);}
+    .team-member h3{font-size:1.2rem; color:#fff; margin-bottom:4px;}
+    .team-member p{font-size:0.95rem; color:#bbb;}
+    .team-member strong{color:#ffb347;}
+    .full-info{
+      display:none;
+      margin-top:12px;
+      font-size:14px;
+      color:#ddd;
+      line-height:1.6;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:10px;
+    }
 
     /* Contact */
     .contact-form{max-width:500px; margin:30px auto; text-align:left; overflow-x:hidden;}
@@ -53,7 +89,6 @@
     .social{margin-top:12px;}
     .social a{color:#ff8c00; font-size:1.5rem; margin:0 12px; text-decoration:none; transition:0.3s;}
     .social a:hover{color:#fff; transform:scale(1.2);}
-
     @media(max-width:600px){header h1{font-size:1.8rem;} section h2{font-size:1.5rem;} nav{gap:15px;}}
   </style>
 </head>
@@ -77,69 +112,74 @@
   <p>Our mission is simple — to make people smile. From relatable Nepali moments to original funny sketches, we bring you laughter straight from our hearts. Stay tuned and subscribe for our latest content! 🎬</p>
 </section>
 
-
-
-
 <section id="about">
   <h2 style="color:#ffb347; text-align:center; margin-bottom:20px;">About Us</h2>
   <p style="font-size:1.1rem; line-height:1.8; max-width:900px; margin:auto; text-align:center;">
     3Comedy-Team is a creative group of passionate individuals who believe that laughter is the best therapy.  
-    Inspired by our hit <strong>Bhatabhungga Serial</strong>, we bring you hilarious stories featuring our three main characters: 
-    <strong>Mailo</strong>, <strong>Gyane Don</strong>, <strong>Bibek</strong>, and <strong>Nabin</strong>, each adding their own unique humor and charm to the series.
+    Inspired by our hit <strong>Bhatabhungga Serial</strong>, we bring you hilarious stories featuring our main characters: 
+    <strong>Mailo</strong>, <strong>Gyane Don</strong>, <strong>Bibek</strong>, and <strong>Nabin</strong>, each adding their own unique humor and charm.
     <br><br>
     We started our journey with a simple dream — to make people forget their worries, even if it’s just for a few minutes. 
     Through our short comedy videos, skits, and the Bhatabhungga Serial, we aim to connect with audiences across Nepal and beyond.
     <br><br>
     Our team works tirelessly behind the scenes to write, shoot, edit, and deliver quality content that reflects real-life situations in a funny and heartwarming way. 
-    Whether it's daily life humor, social satire, or comedic adventures of Mailo, Gyane Don, Bibek and Nabin, our goal is to spread positivity, laughter, and joy everywhere we go. 🎭✨
+    Whether it's daily life humor, social satire, or comedic adventures, our goal is to spread positivity, laughter, and joy everywhere we go. 🎭✨
   </p>
 </section>
 
-
-
-
-
-
-
 <section id="team">
-  <h2>✨Meet Our Team✨</h2>
+  <h2>✨ Meet Our Team ✨</h2>
   <div class="team-grid">
-    <div class="team-member">
-      <img src="Gau_rab.jpg" alt="Member" onclick="showMore(this)">
-      <h3>Gaurab Phuyal</h3>
-      <p><strong>Cameramen & Editor</strong></p>
-      <div class="full-info">
-       Gaurab Phuyal, as Cameramen & Editor, brings every project to life with his sharp eye for detail and passion for storytelling. He loves crafting seamless stories from raw footage, turning simple ideas into captivating and visually engaging videos. Combining creativity with precision, Gaurab skillfully blends animations, edits, and effects to enhance every frame, adding humor, emotion, and energy to each scene. Beyond his technical skills, he fosters a collaborative and positive environment on set, valuing the contributions of every artist and crew member. His dedication, creativity, and innovative approach transform ordinary footage into memorable experiences, leaving audiences entertained, inspired, and eager for more.
-</p>
-      </div>
-    </div>
-    <div class="team-member">
-      <img src="Nabin_KK.jpg" alt="Member" onclick="showMore(this)">
-      <h3>Nabin Phuyal</h3>
-      <p><strong>Chief Ast. Director</strong></p>
-      <div class="full-info">
-       Nabin Phuyal, as Chief and Assistant Director, plays a vital role in keeping the team energized and the production running smoothly. With creativity and precision, he ensures meals are delicious and timely, fueling the cast and crew for long shooting days. Beyond his culinary skills, Nabin’s calm, positive, and approachable behavior fosters a respectful and harmonious environment on set. As Assistant Director, he coordinates scenes, manages schedules, and ensures everyone knows their role, guiding the team with patience and professionalism. His dedication to supporting both the creative and practical sides of production makes every project efficient and enjoyable, while his enthusiasm and teamwork inspire everyone to give their best, making each video not only entertaining to watch but a joy to create.
-</p>
-      </div>
-    </div>
-    <div class="team-member">
-      <img src="Brp_Mailo.jpg" alt="Member" onclick="showMore(this)">
+<div class="team-member">
+
+      <img src="Brp_Mailo.jpg" onclick="showMore(this)">
       <h3>Brp Mailo</h3>
-      <p><strong>Writer & Director </strong></p>
-      <div class="full-info">
-       Brp Mailo, as Writer & Director, masters the art of funny storylines and witty dialogues, bringing each scene to life with unmatched creativity and precision. He crafts scripts that perfectly balance humor, emotion, and relatability, while directing videos with a unique, magical vision that elevates every project. His storytelling is both hilariously entertaining and deeply meaningful, leaving subtle messages that resonate with viewers long after watching.  
-<br>
+      <p><strong>Writer & Director</strong></p>
+      <div class="full-info">Brp Mailo, as Writer & Director, masters the art of funny storylines and witty dialogues, bringing each scene to life with unmatched creativity and precision. He crafts scripts that perfectly balance humor, emotion, and relatability, while directing videos with a unique, magical vision that elevates every project. His storytelling is both hilariously entertaining and deeply meaningful, leaving subtle messages that resonate with viewers long after watching.  
+
 On set, Brp fosters a positive, collaborative, and respectful environment, honoring the talent and contribution of every artist, cameramen, and assistant director. With meticulous attention to detail and innovative direction, he ensures every production runs smoothly, captivates audiences, and becomes a memorable experience. Passionate about his craft and committed to teamwork, Brp inspires admiration from the team and viewers alike, making each video not just a project but a journey full of laughter, emotion, creativity, and lasting impact.  
-<br>
+
 Bold, visionary, and unstoppable, Brp Mailo’s leadership turns ordinary ideas into cinematic experiences, leaving everyone—from cast to crew to viewers—in awe of his skill, dedication, and magical touch.
-</p>
-      </div>
+</div>
     </div>
+
+
+
+    <div class="team-member">
+      <img src="Gau_rab.jpg" onclick="showMore(this)">
+      <h3>Gaurab Phuyal</h3>
+      <p><strong>Cameraman & Editor</strong></p>
+      <div class="full-info">Gaurab Phuyal, as Cameramen & Editor, brings every project to life with his sharp eye for detail and passion for storytelling. He loves crafting seamless stories from raw footage, turning simple ideas into captivating and visually engaging videos. Combining creativity with precision, Gaurab skillfully blends animations, edits, and effects to enhance every frame, adding humor, emotion, and energy to each scene. Beyond his technical skills, he fosters a collaborative and positive environment on set, valuing the contributions of every artist and crew member. His dedication, creativity, and innovative approach transform ordinary footage into memorable experiences, leaving audiences entertained, inspired, and eager for more.
+</div>
+    </div>
+
+
+    <div class="team-member">
+      <img src="Nabin_KK.jpg" onclick="showMore(this)">
+      <h3>Nabin Phuyal</h3>
+      <p><strong>Chief Assistant Director</strong></p>
+      <div class="full-info"> Nabin Phuyal, as Chief and Assistant Director, plays a vital role in keeping the team energized and the production running smoothly. With creativity and precision, he ensures meals are delicious and timely, fueling the cast and crew for long shooting days. Beyond his culinary skills, Nabin’s calm, positive, and approachable behavior fosters a respectful and harmonious environment on set. As Assistant Director, he coordinates scenes, manages schedules, and ensures everyone knows their role, guiding the team with patience and professionalism. His dedication to supporting both the creative and practical sides of production makes every project efficient and enjoyable, while his enthusiasm and teamwork inspire everyone to give their best, making each video not only entertaining to watch but a joy to create.
+.</div>
+    </div>
+
+    
+    <div class="team-member">
+      <img src="bibek.jpg" onclick="showMore(this)">
+      <h3>Bibek Phuyal</h3>
+      <p><strong>Actor & Production Manager</strong></p>
+  <div class="full-info">
+    Bibek Phuyal is an integral member of the 3Comedy-Team, balancing his dual roles as a talented actor and a dedicated production manager. Known for his honesty and unwavering commitment, Bibek ensures that every project runs smoothly behind the scenes. From coordinating schedules, managing resources, and overseeing daily operations, he keeps the team organized and efficient, making sure no detail is overlooked.  
+
+    On camera, Bibek shines as an actor, bringing energy, authenticity, and a natural comedic timing that resonates with the audience. His dedication to both his craft and the team is unmatched, as he seamlessly combines creativity with reliability. Bibek’s ability to unite the team, motivate others, and manage complex tasks makes him the backbone of every production.  
+
+    Passionate, hardworking, and approachable, Bibek Phuyal embodies the spirit of teamwork. He inspires confidence in everyone around him, ensuring that each video, skit, or serial episode reaches its full potential while maintaining a positive and collaborative environment. Simply put, Bibek is not only a performer but also the heart of the team’s smooth and successful productions.
+  </div>
+</div>
+
+    
+
   </div>
 </section>
-
-
-
 
 
 
@@ -147,30 +187,17 @@ Bold, visionary, and unstoppable, Brp Mailo’s leadership turns ordinary ideas 
 <section id="videos">
   <h2>"Bhatabhungga Serial🎬"</h2>
   <p>Click on any video to watch it below!</p>
-  <h3>New Episode</h3>
 
-  <!-- Main Video Display -->
   <div class="video-container" style="margin-bottom:20px;">
     <iframe id="mainVideo" src="https://www.youtube.com/embed/VN-Shmt8Xbk?start=4" width="700" height="450" allowfullscreen></iframe>
   </div>
 
-  <!-- Video Thumbnails -->
   <div class="video-grid">
-    <div onclick="playVideo('VN-Shmt8Xbk?start=4')">
-      <iframe src="https://www.youtube.com/embed/3CjLy3Dt1ww?start=11" allowfullscreen></iframe>
-    </div>
-    <div onclick="playVideo('3CjLy3Dt1ww?start=11')">
-      <iframe src="https://www.youtube.com/embed/Slf8DAFqEn0?start=197" allowfullscreen></iframe>
-    </div>
-    <div onclick="playVideo('Slf8DAFqEn0?start=197')">
-      <iframe src="https://www.youtube.com/embed/0C5Jt29zl4g?start=135" allowfullscreen></iframe>
-    </div>
+    <div onclick="playVideo('VN-Shmt8Xbk?start=4')"><iframe src="https://www.youtube.com/embed/3CjLy3Dt1ww?start=11" allowfullscreen></iframe></div>
+    <div onclick="playVideo('3CjLy3Dt1ww?start=11')"><iframe src="https://www.youtube.com/embed/Slf8DAFqEn0?start=197" allowfullscreen></iframe></div>
+    <div onclick="playVideo('Slf8DAFqEn0?start=197')"><iframe src="https://www.youtube.com/embed/0C5Jt29zl4g?start=135" allowfullscreen></iframe></div>
   </div>
 </section>
-
-
-
-
 
 <section id="contact">
   <h2>Contact Us</h2>
@@ -186,10 +213,6 @@ Bold, visionary, and unstoppable, Brp Mailo’s leadership turns ordinary ideas 
   </iframe>
 </section>
 
-
-
-
-
 <footer>
   <p>© 2025 3Comedy-Team | All Rights Reserved.</p>
   <div class="social">
@@ -200,38 +223,35 @@ Bold, visionary, and unstoppable, Brp Mailo’s leadership turns ordinary ideas 
 </footer>
 
 <script>
-function showMore(element) {
-  const member = element.parentElement;
-  const info = member.querySelector('.full-info');
-  if(info.style.display === 'block') {
-    info.style.display = 'none';
-  } else {
-    document.querySelectorAll('.full-info').forEach(div => {
-      if(div !== info) div.style.display = 'none';
+  // Show only one team member info at a time
+  function showMore(element){
+    const member = element.parentElement;
+    const info = member.querySelector('.full-info');
+    document.querySelectorAll('.full-info').forEach(div=>{
+      if(div !== info){ div.style.display = "none"; }
     });
-    info.style.display = 'block';
-    info.scrollIntoView({behavior: "smooth", block: "end"});
+    info.style.display = info.style.display === "block" ? "none" : "block";
+    member.scrollIntoView({behavior:"smooth", block:"center"});
   }
-}
 
-// Scroll Animation
-const sections = document.querySelectorAll("section");
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if(top < triggerBottom) section.classList.add("visible");
-  });
-};
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+  // Scroll reveal
+  const sections = document.querySelectorAll("section");
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if(top < triggerBottom) section.classList.add("visible");
+    });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 
-// Video click to play
-function playVideo(videoId){
-  const mainVideo = document.getElementById('mainVideo');
-  mainVideo.src = 'https://www.youtube.com/embed/' + videoId;
-  mainVideo.scrollIntoView({behavior:"smooth"});
-}
+  // Play YouTube video
+  function playVideo(videoId){
+    const mainVideo = document.getElementById('mainVideo');
+    mainVideo.src = 'https://www.youtube.com/embed/' + videoId;
+    mainVideo.scrollIntoView({behavior:"smooth"});
+  }
 </script>
 
 </body>
